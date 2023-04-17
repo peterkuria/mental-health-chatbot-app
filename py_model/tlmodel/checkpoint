@@ -1,2 +1,2 @@
-model_checkpoint_path: "c:\\Users\\mogam\\Desktop\\Work\\Mental Health Chatbot\\MHC Local\\api_server_cc\\tlmodel\\model.tflearn"
-all_model_checkpoint_paths: "c:\\Users\\mogam\\Desktop\\Work\\Mental Health Chatbot\\MHC Local\\api_server_cc\\tlmodel\\model.tflearn"
+model_checkpoint_path: "c:\\Users\\mogam\\Desktop\\Work\\Mental Health Chatbot\\mental-health-chatbot-app\\py_model\\tlmodel\\model.tflearn"
+all_model_checkpoint_paths: "c:\\Users\\mogam\\Desktop\\Work\\Mental Health Chatbot\\mental-health-chatbot-app\\py_model\\tlmodel\\model.tflearn"

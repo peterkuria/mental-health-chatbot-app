@@ -44,7 +44,7 @@ const Chat = ({ navigation }) => {
     try {
       // Call the FastAPI endpoint to get the model's response
       const userInput = newMessages[0].text;
-      const response = await fetch('http://10.55.4.85:8000/chatbot', {
+      const response = await fetch('http://10.52.59.112:8000/chatbot', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -59,7 +59,7 @@ const Chat = ({ navigation }) => {
       if (newMessages.length > 0 && newMessages[0].text.trim().length > 0) {
         const typingMessage = {
           _id: typingMessageId,
-          text: 'Cece is typing...',
+          text: 'Buddy is typing...',
           createdAt: new Date(),
           system: true,
         };

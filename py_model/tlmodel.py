@@ -47,7 +47,7 @@ def bow(sentence, words, show_details=False):
 
 def generate_response(user_input):
     model, words, classes = load_model()
-    intents = json.load(open('data/intents4.json', encoding='utf-8'))
+    intents = json.load(open('data/intents.json', encoding='utf-8'))
 
     results = model.predict([bow(user_input, words)])[0]
     results = [[i, r] for i, r in enumerate(results) if r > 0.25]
