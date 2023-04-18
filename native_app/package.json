@@ -11,6 +11,7 @@
   "dependencies": {
     "@firebase/app": "^0.9.7",
     "@firebase/database": "^0.14.4",
+    "@react-native-async-storage/async-storage": "^1.18.1",
     "@react-native-picker/picker": "^2.4.9",
     "@react-navigation/bottom-tabs": "^6.5.7",
     "@react-navigation/drawer": "^6.6.2",

@@ -3,6 +3,7 @@ import { GiftedChat, SystemMessage, InputToolbar, Composer } from 'react-native-
 import { SafeAreaView, StyleSheet, View, Text, useWindowDimensions, Image, TouchableOpacity } from 'react-native';
 import botIcon from '../assets/icons8-circled-user-female-skin-type-6-48.png';
 import FloatingButton from './FloatingButton';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const Chat = ({ navigation }) => {
   const { width, height } = useWindowDimensions();
@@ -33,6 +34,18 @@ const Chat = ({ navigation }) => {
     ]);
   }, []);
 
+  useEffect(() => {
+    const saveMessages = async () => {
+      try {
+        await AsyncStorage.setItem('chatMessages', JSON.stringify(messages));
+      } catch (e) {
+        console.error('Failed to save chat messages to local storage:', e);
+      }
+    };
+
+    saveMessages();
+  }, [messages]);
+
   const onSend = async (newMessages = []) => {
     setMessages((previousMessages) => GiftedChat.append(previousMessages, newMessages));
     setTyping(true); // Display typing indicator
@@ -44,7 +57,7 @@ const Chat = ({ navigation }) => {
     try {
       // Call the FastAPI endpoint to get the model's response
       const userInput = newMessages[0].text;
-      const response = await fetch('http://10.52.59.112:8000/chatbot', {
+      const response = await fetch('http://10.55.4.85:8000/chatbot', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

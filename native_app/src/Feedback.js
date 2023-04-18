@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TextInput, Button } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
+//import { db } from './FirebaseConfig';
 
 const Feedback = () => {
   const [feedbackType, setFeedbackType] = useState('feature');
@@ -17,6 +18,20 @@ const Feedback = () => {
       console.log('Error submitting feedback:', error);
     });
   };
+  
+{/*
+  const sendFeedback = () => {
+    db.ref('/feedback').push({
+      //feedbackType,
+      feedbackText,
+      timestamp: firebase.database.ServerValue.TIMESTAMP,
+    }).then(() => {
+      console.log('Feedback submitted successfully');
+    }).catch((error) => {
+      console.log('Error submitting feedback:', error);
+    });
+  };
+  */}
 
   return (
     <View style={styles.container}>
